@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "c9505396-f413-4e51-8b49-b72724f4d1ba",
+		"name": "Now App QA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Favourite Merchant",
+			"item": [
+				{
+					"name": "Add Favourite Merchant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-foody-access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-type",
+								"value": "3",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-id",
+								"value": "ECC6FEDE-71D4-4288-A425-462056C92334",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-version",
+								"value": "4.43.3",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-api-version",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "user-agent",
+								"value": "NOW/4.42.1 (iPhone12,5; ios 14.6; Scale/3)",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-app-type",
+								"value": "1004",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-rn-version",
+								"value": "4.42.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id_type\": 2,\r\n\t\"request_id\": 1505,\r\n\t\"is_favourite\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/mark_favourite",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"mark_favourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Favourite Merchant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-foody-access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-type",
+								"value": "3",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-id",
+								"value": "ECC6FEDE-71D4-4288-A425-462056C92334",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-version",
+								"value": "4.43.3",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-api-version",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "user-agent",
+								"value": "NOW/4.42.1 (iPhone12,5; ios 14.6; Scale/3)",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-app-type",
+								"value": "1004",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-rn-version",
+								"value": "4.42.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id_type\": 2,\r\n\t\"request_id\": 1505,\r\n\t\"is_favourite\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/restaurant/mark_favourite",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"mark_favourite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favourite Merchant Info",
+			"item": [
+				{
+					"name": "Get Favourite Ids",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-foody-access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-type",
+								"value": "3",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-id",
+								"value": "ECC6FEDE-71D4-4288-A425-462056C92334",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-version",
+								"value": "4.43.3",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-api-version",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "user-agent",
+								"value": "NOW/4.42.1 (iPhone12,5; ios 14.6; Scale/3)",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-app-type",
+								"value": "1004",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-rn-version",
+								"value": "4.42.1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/delivery/get_user_favorite_ids?sort_type=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"delivery",
+								"get_user_favorite_ids"
+							],
+							"query": [
+								{
+									"key": "sort_type",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favourite Merchant Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-foody-access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-type",
+								"value": "3",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-id",
+								"value": "ECC6FEDE-71D4-4288-A425-462056C92334",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-version",
+								"value": "4.43.3",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-api-version",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "user-agent",
+								"value": "NOW/4.42.1 (iPhone12,5; ios 14.6; Scale/3)",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-app-type",
+								"value": "1004",
+								"type": "text"
+							},
+							{
+								"key": "x-foody-client-rn-version",
+								"value": "4.42.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"delivery_ids\": [1106, 440]\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/delivery/get_infos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"delivery",
+								"get_infos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

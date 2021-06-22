@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "2488c5f5-46eb-40c9-8764-b19422601331",
+		"name": "Mock Server 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mock server 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về username là be_gao\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.username).to.eql(\"be_gao\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về uid là 3112\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.uid).to.eql(\"3112\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về address là Binh Thanh District, HCM City, Viet Nam\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.address.name).to.eql(\"Binh Thanh District, HCM City, Viet Nam\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả kết quả success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_3}}/mockserver_3_get_info?be_gao",
+					"host": [
+						"{{url_3}}"
+					],
+					"path": [
+						"mockserver_3_get_info"
+					],
+					"query": [
+						{
+							"key": "be_gao",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register namkevin_3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"namkevin_3\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_3}}/mockserver_3_register?namkevin_3",
+							"host": [
+								"{{url_3}}"
+							],
+							"path": [
+								"mockserver_3_register"
+							],
+							"query": [
+								{
+									"key": "namkevin_3",
+									"value": null
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"reply\": {\r\n        \"username\": \"namkevin_3\",\r\n        \"password\": \"123456\"\r\n    },\r\n    \"result\": \"success\"\r\n}"
+				},
+				{
+					"name": "register be_gao",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"be_gao\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_3}}/mockserver_3_register?be_gao",
+							"host": [
+								"{{url_3}}"
+							],
+							"path": [
+								"mockserver_3_register"
+							],
+							"query": [
+								{
+									"key": "be_gao",
+									"value": null
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"reply\": {\n        \"username\": \"be_gao\",\n        \"password\": \"123456\"\n    },\n    \"result\": \"success\"\n}"
+				},
+				{
+					"name": "get info namkevin_3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_3}}/mockserver_3_get_info?namkevin_3",
+							"host": [
+								"{{url_3}}"
+							],
+							"path": [
+								"mockserver_3_get_info"
+							],
+							"query": [
+								{
+									"key": "namkevin_3",
+									"value": null
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"reply\": {\n        \"username\": \"namkevin_3\",\n        \"uid\": \"0901\",\n        \"first_name\": \"Kevin 33333\",\n        \"last_name\": \"Nam\",\n        \"address\": {\n            \"name\": \"Binh Thanh District, HCM City, Viet Nam\",\n            \"lat\": 10.7992226,\n            \"long\": 106.71170\n        }\n    },\n    \"result\": \"success\"\n}"
+				},
+				{
+					"name": "get info namkevin_4",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_3}}/mockserver_3_get_info?namkevin_4",
+							"host": [
+								"{{url_3}}"
+							],
+							"path": [
+								"mockserver_3_get_info"
+							],
+							"query": [
+								{
+									"key": "namkevin_4",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Jun 2021 20:54:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=621a0f5baff09d48"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=0ef1d48bc04a57ff"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "120"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "119"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1623963324"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"147-LtS+mQ42XvPPISqRKcBIr+NAE1I\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reply\": {\n        \"username\": \"namkevin_4\",\n        \"uid\": \"090190\",\n        \"first_name\": \"Kevin 44444444\",\n        \"last_name\": \"Nam\",\n        \"address\": {\n            \"name\": \"Binh Thanh District, HCM City, Viet Nam\",\n            \"lat\": 10.7992226,\n            \"long\": 106.71170\n        }\n    },\n    \"result\": \"success\"\n}"
+				},
+				{
+					"name": "get info be_gao",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_3}}/mockserver_3_get_info?be_gao",
+							"host": [
+								"{{url_3}}"
+							],
+							"path": [
+								"mockserver_3_get_info"
+							],
+							"query": [
+								{
+									"key": "be_gao",
+									"value": null
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"reply\": {\n        \"username\": \"be_gao\",\n        \"uid\": \"3112\",\n        \"first_name\": \"Thien\",\n        \"last_name\": \"An\",\n        \"address\": {\n            \"name\": \"Binh Thanh District, HCM City, Viet Nam\",\n            \"lat\": 10.7992226,\n            \"long\": 106.71170\n        }\n    },\n    \"result\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "register be_gao",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về username là be_gao\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.username).to.eql(\"be_gao\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả kết quả success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"be_gao\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_3}}/mockserver_3_register?be_gao",
+					"host": [
+						"{{url_3}}"
+					],
+					"path": [
+						"mockserver_3_register"
+					],
+					"query": [
+						{
+							"key": "be_gao",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register namkevin_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về username là namkevin_3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.username).to.eql(\"namkevin_3\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả kết quả success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"be_gao\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_3}}/mockserver_3_register?namkevin_3",
+					"host": [
+						"{{url_3}}"
+					],
+					"path": [
+						"mockserver_3_register"
+					],
+					"query": [
+						{
+							"key": "namkevin_3",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get info namkevin_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về username là namkevin_3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.username).to.eql(\"namkevin_3\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về uid là 0901\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.uid).to.eql(\"0901\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về address là Binh Thanh District, HCM City, Viet Nam\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.address.name).to.eql(\"Binh Thanh District, HCM City, Viet Nam\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả kết quả success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_3}}/mockserver_3_get_info?namkevin_3",
+					"host": [
+						"{{url_3}}"
+					],
+					"path": [
+						"mockserver_3_get_info"
+					],
+					"query": [
+						{
+							"key": "namkevin_3",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get info namkevin_4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về username là namkevin_4\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.username).to.eql(\"namkevin_4\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về uid là 090190\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.uid).to.eql(\"090190\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về address là Binh Thanh District, HCM City, Viet Nam\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.address.name).to.eql(\"Binh Thanh District, HCM City, Viet Nam\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả kết quả success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_3}}/mockserver_3_get_info?namkevin_4",
+					"host": [
+						"{{url_3}}"
+					],
+					"path": [
+						"mockserver_3_get_info"
+					],
+					"query": [
+						{
+							"key": "namkevin_4",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get info be_gao",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về username là be_gao\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.username).to.eql(\"be_gao\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về uid là 3112\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.uid).to.eql(\"3112\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả về address là Binh Thanh District, HCM City, Viet Nam\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.reply.address.name).to.eql(\"Binh Thanh District, HCM City, Viet Nam\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Api trả kết quả success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_3}}/mockserver_3_get_info?be_gao",
+					"host": [
+						"{{url_3}}"
+					],
+					"path": [
+						"mockserver_3_get_info"
+					],
+					"query": [
+						{
+							"key": "be_gao",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

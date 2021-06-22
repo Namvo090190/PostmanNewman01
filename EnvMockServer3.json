@@ -1,0 +1,39 @@
+{
+	"id": "c5d02fb1-f19b-45e2-a8c6-c7b2e083871a",
+	"name": "Demo mock server",
+	"values": [
+		{
+			"key": "url",
+			"value": "https://8a10c1ee-b1a2-4825-a368-c01345764eaa.mock.pstmn.io",
+			"enabled": true
+		},
+		{
+			"key": "url_3",
+			"value": "https://53dc3dfa-5a37-462f-8469-5537711f7a65.mock.pstmn.io",
+			"enabled": true
+		},
+		{
+			"key": "url_4",
+			"value": "https://96b6c026-55ad-420e-bd14-abab74359734.mock.pstmn.io",
+			"enabled": true
+		},
+		{
+			"key": "url_5",
+			"value": "https://a2e15e01-aef4-4452-9dff-cba365318ebf.mock.pstmn.io",
+			"enabled": true
+		},
+		{
+			"key": "url_6",
+			"value": "https://49ec327f-2756-4beb-a58d-e47ebcd48fae.mock.pstmn.io",
+			"enabled": true
+		},
+		{
+			"key": "artist",
+			"value": "big bang",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-06-20T10:26:31.301Z",
+	"_postman_exported_using": "Postman/8.6.2"
+}
